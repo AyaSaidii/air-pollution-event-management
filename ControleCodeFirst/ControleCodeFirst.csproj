@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E9468E5-1348-4C73-B5FC-6025C58EEC9E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ControleCodeFirst</RootNamespace>
+    <AssemblyName>ControleCodeFirst</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\202403250805570_InitialCreate.cs" />
+    <Compile Include="Migrations\202403250805570_InitialCreate.Designer.cs">
+      <DependentUpon>202403250805570_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202403250955252_nvlMigOperation.cs" />
+    <Compile Include="Migrations\202403250955252_nvlMigOperation.Designer.cs">
+      <DependentUpon>202403250955252_nvlMigOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Modele\Login.cs" />
+    <Compile Include="Repository\ChercheurPEvent\ChercheurEventPRepository.cs" />
+    <Compile Include="Repository\ChercheurPEvent\IChercheurEventPRepository.cs" />
+    <Compile Include="Repository\PollutionEvenementR\IPollutionEventRepository.cs" />
+    <Compile Include="Repository\PollutionEvenementR\PollutionEventRepository.cs" />
+    <Compile Include="View\Acceuil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Acceuil.Designer.cs">
+      <DependentUpon>Acceuil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ChercheurPollEventF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChercheurPollEventF.Designer.cs">
+      <DependentUpon>ChercheurPollEventF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modele\Chercheur.cs" />
+    <Compile Include="Modele\CherchPollutionEvent.cs" />
+    <Compile Include="DAO DB Context\DatabaseContext.cs" />
+    <Compile Include="Modele\Evenement.cs" />
+    <Compile Include="Modele\Lieu.cs" />
+    <Compile Include="Modele\PollutionData.cs" />
+    <Compile Include="Modele\PollutionEvenement.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ChercheurR\ChercheurRepository.cs" />
+    <Compile Include="Repository\ChercheurR\IChercheurRepository.cs" />
+    <Compile Include="Repository\EvenementR\EventRepository.cs" />
+    <Compile Include="Repository\EvenementR\IEvenementRepository.cs" />
+    <Compile Include="Repository\LieuR\ILieuRepository.cs" />
+    <Compile Include="Repository\LieuR\LieuRepository.cs" />
+    <Compile Include="Repository\PollutionDataR\IPollutionDataRepository.cs" />
+    <Compile Include="Repository\PollutionDataR\PollutionDataRepository.cs" />
+    <Compile Include="View\ChercheurFor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ChercheurFor.Designer.cs">
+      <DependentUpon>ChercheurFor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LieuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LieuForm.Designer.cs">
+      <DependentUpon>LieuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MenuGestionchercheurs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MenuGestionchercheurs.Designer.cs">
+      <DependentUpon>MenuGestionchercheurs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Menu.Designer.cs">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MenuGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MenuGestion.Designer.cs">
+      <DependentUpon>MenuGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PollutEventF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PollutEventF.Designer.cs">
+      <DependentUpon>PollutEventF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PollutionDataF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PollutionDataF.Designer.cs">
+      <DependentUpon>PollutionDataF.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Migrations\202403250805570_InitialCreate.resx">
+      <DependentUpon>202403250805570_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202403250955252_nvlMigOperation.resx">
+      <DependentUpon>202403250955252_nvlMigOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Acceuil.resx">
+      <DependentUpon>Acceuil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ChercheurPollEventF.resx">
+      <DependentUpon>ChercheurPollEventF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\ChercheurFor.resx">
+      <DependentUpon>ChercheurFor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LieuForm.resx">
+      <DependentUpon>LieuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MenuGestionchercheurs.resx">
+      <DependentUpon>MenuGestionchercheurs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Menu.resx">
+      <DependentUpon>Menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MenuGestion.resx">
+      <DependentUpon>MenuGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PollutEventF.resx">
+      <DependentUpon>PollutEventF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PollutionDataF.resx">
+      <DependentUpon>PollutionDataF.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\8867923.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
